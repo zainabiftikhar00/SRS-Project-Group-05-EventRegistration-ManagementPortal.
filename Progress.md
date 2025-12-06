@@ -10,3 +10,6 @@
 
 [NEW SRS.pdf](https://github.com/user-attachments/files/23838448/NEW.SRS.pdf)
 //New SRS doc made by R012 (version 02, 30-11-2025)
+
+[Design Document New .pdf](https://github.com/user-attachments/files/23981256/Design.Document.New.pdf)
+//New Design Doc made by R032,R038 (Version 02, 6-12-2025)
