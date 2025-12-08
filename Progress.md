@@ -14,3 +14,6 @@
 
 [Design Document New .pdf](https://github.com/user-attachments/files/23981256/Design.Document.New.pdf)
 //New Design Doc made by R032,R038 (Version 02, 6-12-2025)
+
+
+Added Code version 01 on 08 December,2025. (5:41 pm), by R038
