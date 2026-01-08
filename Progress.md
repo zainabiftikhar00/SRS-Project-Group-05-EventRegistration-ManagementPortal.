@@ -24,6 +24,6 @@
 [Event Registration and management portal Functionality.pdf](https://github.com/user-attachments/files/24359540/Event.Registration.and.management.portal.Functionality.pdf)
 //Code Functionality Document made by R038 (28-12-2025)
 
-[FINAL TEST PLAN.pdf](https://github.com/user-attachments/files/24500767/FINAL.TEST.PLAN.pdf)
+[Test Plan EMP.pdf](https://github.com/user-attachments/files/24501405/Test.Plan.EMP.pdf)
 //TEST PLAN DOCUMENT MADE BY R012,R032, Compiled by R038. (08-06-2026) 
 
