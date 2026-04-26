@@ -27,3 +27,8 @@
 [Test Plan EMP.pdf](https://github.com/user-attachments/files/24501405/Test.Plan.EMP.pdf)
 //TEST PLAN DOCUMENT MADE BY R012,R032, Compiled by R038. (08-06-2026) 
 
+//DataBase Assignment Task 
+[DataBase Assignement.pdf](https://github.com/user-attachments/files/27100190/DataBase.Assignement.pdf) 
+//Made on 30th March 2026, ER Diagram by R032, Rest work by R038. (uploading on 26-04-2026, 6:38pm)
+
+
