@@ -34,3 +34,8 @@
 //Normalization 
 [Normalization 3.0..pdf](https://github.com/user-attachments/files/29150318/Normalization.3.0.pdf)
 //20-06-2026 (1:29AM ) R038
+
+//SQL create insert commands
+[SQL create_insert command..pdf](https://github.com/user-attachments/files/29150498/SQL.create_insert.command.pdf)
+//20-06-2026 (1:39AM ) R038
+
