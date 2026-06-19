@@ -31,4 +31,6 @@
 [DataBase Assignement.pdf](https://github.com/user-attachments/files/27100190/DataBase.Assignement.pdf) 
 //Made on 30th March 2026, ER Diagram by R032, Rest work by R038. (uploading on 26-04-2026, 6:38pm)
 
-
+//Normalization 
+[Normalization 3.0..pdf](https://github.com/user-attachments/files/29150318/Normalization.3.0.pdf)
+//20-06-2026 (1:29AM ) R038
