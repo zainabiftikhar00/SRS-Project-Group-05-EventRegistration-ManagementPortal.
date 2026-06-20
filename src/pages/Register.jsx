@@ -2,82 +2,60 @@ import { useState } from "react";
 
 function Register() {
 
-const [registered, setRegistered] =
-useState(false);
+  const [registered, setRegistered] = useState(false);
 
-function handleSubmit(e){
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setRegistered(true);
+  };
 
-e.preventDefault();
+  if (registered) {
+    return (
+      <div className="hero">
+        <h1>Registration Successful 🎉</h1>
+        <p>You have successfully registered for the event.</p>
+      </div>
+    );
+  }
 
-setRegistered(true);
+  return (
+    <div className="hero">
 
-}
+      <h1>Register For Event</h1>
 
-if(registered){
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          width: "350px"
+        }}
+      >
 
-return(
+        <input
+          type="text"
+          placeholder="Full Name"
+          required
+        />
 
-<div className="hero">
+        <input
+          type="email"
+          placeholder="Email Address"
+          required
+        />
 
-<h1>
-Registration Successful 🎉
-</h1>
+        <button
+          type="submit"
+          className="explore-btn"
+        >
+          Register
+        </button>
 
-<p>
-You are registered for the event.
-</p>
+      </form>
 
-</div>
-
-);
-
-}
-
-return(
-
-<div className="hero">
-
-<h1>
-Register
-</h1>
-
-<form
-onSubmit={handleSubmit}
-style={{
-display:"flex",
-flexDirection:"column",
-gap:"15px",
-width:"350px"
-}}
->
-
-<input
-type="text"
-placeholder="Your Name"
-required
-/>
-
-<input
-type="email"
-placeholder="Email"
-required
-/>
-
-<button
-type="submit"
-className="explore-btn"
->
-
-Register
-
-</button>
-
-</form>
-
-</div>
-
-);
-
+    </div>
+  );
 }
 
 export default Register;
