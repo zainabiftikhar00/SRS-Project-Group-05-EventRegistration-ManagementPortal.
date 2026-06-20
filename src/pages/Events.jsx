@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Events() {
 
   const events = [
@@ -40,7 +42,10 @@ function Events() {
           <p>Venue: {event.venue}</p>
           <p>Date: {event.date}</p>
 
-          <button>Register</button>
+          <Link to={`/events/${event.id}`}>
+            <button>View Details</button>
+          </Link>
+
         </div>
       ))}
 

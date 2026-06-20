@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EventDetails from "./pages/EventDetails";
+
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -12,13 +14,15 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/events" element={<Events />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/events/:id" element={<EventDetails />} />
+  </Routes>
 
     </BrowserRouter>
   );
 }
 
 export default App;
+
