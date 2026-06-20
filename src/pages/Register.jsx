@@ -2,19 +2,17 @@ import { useState } from "react";
 
 function Register() {
 
-const [registered, setRegistered] =
-useState(false);
+const [registered,setRegistered]=useState(false);
 
-const [role, setRole] =
-useState("");
+const [role,setRole]=useState("");
 
-function handleSubmit(e){
+const handleSubmit=(e)=>{
 
 e.preventDefault();
 
 setRegistered(true);
 
-}
+};
 
 if(registered){
 
@@ -27,16 +25,35 @@ Registration Successful 🎉
 </h1>
 
 <p>
-Thank you for registering.
+Your seat has been reserved.
+</p>
+
+<div
+className="register-card"
+>
+
+<p>
+
+Role:
+<strong>
+{" "}
+{role}
+</strong>
+
 </p>
 
 <p>
-Role:
-{" "}
+
+Ticket:
 <strong>
-{role}
+
+ PKR 1500
+
 </strong>
+
 </p>
+
+</div>
 
 </div>
 
@@ -49,115 +66,75 @@ return(
 <div className="hero">
 
 <h1>
-Register For Event
+Event Registration
 </h1>
 
-<p>
-Ticket Price:
-<strong>
- PKR 1500
-</strong>
+<div className="register-card">
+
+<h3>
+
+🎟 Ticket Price
+
+</h3>
+
+<p
+style={{
+fontSize:"28px",
+marginBottom:"20px"
+}}
+>
+
+PKR 1500
+
 </p>
 
 <form
-
 onSubmit={handleSubmit}
-
-style={{
-
-display:"flex",
-
-flexDirection:"column",
-
-gap:"18px",
-
-width:"420px",
-
-background:
-"rgba(255,255,255,.6)",
-
-padding:"30px",
-
-borderRadius:"24px",
-
-boxShadow:
-"0 10px 30px rgba(0,0,0,.08)"
-
-}}
-
+className="register-form"
 >
 
 <input
-
 type="text"
-
 placeholder="Full Name"
-
 required
-
-style={inputStyle}
-
 />
 
 <input
-
 type="email"
-
 placeholder="Email"
-
 required
-
-style={inputStyle}
-
 />
 
 <select
-
 required
-
 value={role}
-
 onChange={
 (e)=>
 setRole(e.target.value)
 }
-
-style={inputStyle}
-
 >
 
 <option value="">
-
-Select Role
-
+Choose Role
 </option>
 
-<option>
-
+<option value="Participant">
 Participant
-
 </option>
 
-<option>
-
+<option value="Volunteer">
 Volunteer
-
 </option>
 
-<option>
-
+<option value="Organizer">
 Organizer
-
 </option>
 
 </select>
 
 <button
-
 type="submit"
-
 className="explore-btn"
-
 >
 
 Register
@@ -168,23 +145,10 @@ Register
 
 </div>
 
+</div>
+
 );
 
 }
-
-const inputStyle={
-
-padding:"14px",
-
-borderRadius:"12px",
-
-border:
-"1px solid #dbc7ba",
-
-background:"#fffaf5",
-
-fontSize:"16px"
-
-};
 
 export default Register;
