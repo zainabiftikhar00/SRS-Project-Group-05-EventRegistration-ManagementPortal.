@@ -1,78 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Poppins",sans-serif;
+font-family:"Quicksand",sans-serif;
 }
 
 body{
+
 background:
 linear-gradient(
 135deg,
-#f7efe7,
-#efe3d8,
-#e7d6cb
+#f6efe8,
+#eee1d4,
+#e5d6ca
 );
 
-color:#6f4e37;
+color:#6b4f3c;
+
+min-height:100vh;
+
 }
 
+a{
+
+text-decoration:none;
+
+}
+
+/* NAVBAR */
+
 nav{
+
 display:flex;
+
 justify-content:space-between;
+
+align-items:center;
+
 padding:25px 50px;
-background:#f6ede5;
+
+background:
+rgba(255,250,245,.75);
+
+backdrop-filter:
+blur(10px);
+
+}
+
+nav h2{
+
+color:#8b5e3c;
+
+font-size:40px;
+
 }
 
 nav a{
+
 color:#8b5e3c;
-text-decoration:none;
-margin-left:25px;
+
+margin-left:30px;
+
+font-size:20px;
+
+font-weight:700;
+
+transition:.3s;
+
 }
 
+nav a:hover{
+
+color:#cf9376;
+
+}
+
+/* HOME */
+
 .hero{
-text-align:center;
-padding:80px 20px;
 
 display:flex;
+
 flex-direction:column;
 
 align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:80px 20px;
+
 }
 
-.hero-image{
-width:520px;
+.hero h1{
 
-max-width:90%;
+font-size:72px;
 
-margin-top:50px;
+max-width:1100px;
 
-border-radius:28px;
+color:#875b42;
 
-box-shadow:
-0 12px 40px rgba(0,0,0,.12);
 }
 
-button{
-background:#c79a89;
+.hero p{
+
+font-size:24px;
+
+margin-top:20px;
+
+margin-bottom:35px;
+
+color:#765b49;
+
+}
+
+.explore-btn{
+
+background:#cfa38c;
 
 color:white;
 
-padding:14px 28px;
+padding:18px 36px;
 
 border:none;
 
-border-radius:14px;
+border-radius:18px;
+
+font-size:22px;
 
 cursor:pointer;
 
 transition:.3s;
+
 }
 
-button:hover{
-transform:translateY(-3px);
+.explore-btn:hover{
 
-background:#b77b68;
+background:#b98167;
+
+transform:scale(1.05);
+
+}
+
+.hero-image{
+
+margin-top:70px;
+
+width:700px;
+
+max-width:90%;
+
+border-radius:30px;
+
+box-shadow:
+0 18px 45px rgba(0,0,0,.12);
+
+}
+
+/* EVENT CARDS */
+
+.card{
+
+background:
+rgba(255,255,255,.6);
+
+padding:25px;
+
+border-radius:22px;
+
+margin-bottom:20px;
+
+box-shadow:
+0 8px 24px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
 }

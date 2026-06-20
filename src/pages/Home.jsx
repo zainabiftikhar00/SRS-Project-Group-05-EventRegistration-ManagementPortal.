@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home(){
 
-return (
+return(
 
 <div className="hero">
 
