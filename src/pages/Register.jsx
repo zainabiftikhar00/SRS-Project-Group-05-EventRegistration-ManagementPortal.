@@ -102,11 +102,11 @@ setRole(e.target.value)
 Choose Role
 </option>
 
-<option value="Participant">
+<option value="Admin">
 Participant
 </option>
 
-<option value="Volunteer">
+<option value="Attendee">
 Volunteer
 </option>
 
