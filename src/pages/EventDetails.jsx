@@ -1,40 +1,89 @@
+import { useParams, Link } from "react-router-dom";
+
 function EventDetails() {
-  return (
-    <div className="container mt-5">
 
-      <div className="card shadow">
+const { id } = useParams();
 
-        <div className="card-body">
+const events = [
 
-          <h1>Tech Conference 2026</h1>
+{
+id:1,
+title:"Tech Conference 2026",
+venue:"Islamabad",
+date:"25 June 2026",
+description:"Join tech experts and explore future innovations."
+},
 
-          <p>
-            <strong>Venue:</strong> Islamabad
-          </p>
+{
+id:2,
+title:"AI Workshop",
+venue:"Rawalpindi",
+date:"30 June 2026",
+description:"Hands-on AI training and project building."
+},
 
-          <p>
-            <strong>Date:</strong> 25 June 2026
-          </p>
+{
+id:3,
+title:"Sports Gala",
+venue:"NUST",
+date:"10 July 2026",
+description:"Competitions and activities across sports."
+}
 
-          <p>
-            <strong>Category:</strong> Technology
-          </p>
+];
 
-          <p>
-            Join experts and students for a day of
-            innovation and learning.
-          </p>
+const event =
+events.find(
+(e)=>
+e.id===Number(id)
+);
 
-          <button className="btn btn-success">
-            Register Now
-          </button>
+if(!event){
 
-        </div>
+return <h2>Event not found</h2>;
 
-      </div>
+}
 
-    </div>
-  );
+return(
+
+<div
+className="hero"
+>
+
+<h1>
+{event.title}
+</h1>
+
+<p>
+📍 {event.venue}
+</p>
+
+<p>
+📅 {event.date}
+</p>
+
+<p>
+{event.description}
+</p>
+
+<Link
+to="/register"
+>
+
+<button
+className="explore-btn"
+>
+
+Register Now
+
+</button>
+
+</Link>
+
+</div>
+
+);
+
 }
 
 export default EventDetails;
