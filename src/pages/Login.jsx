@@ -1,51 +1,123 @@
+import { useState } from "react";
+
 function Login() {
-  return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
 
-          <div className="card shadow">
-            <div className="card-body">
+const [loggedIn, setLoggedIn] =
+useState(false);
 
-              <h2 className="text-center mb-4">
-                Login
-              </h2>
+const [role, setRole] =
+useState("");
 
-              <form>
+function handleSubmit(e){
 
-                <div className="mb-3">
-                  <label>Email</label>
+e.preventDefault();
 
-                  <input
-                    type="email"
-                    className="form-control"
-                  />
-                </div>
+setLoggedIn(true);
 
-                <div className="mb-3">
-                  <label>Password</label>
+}
 
-                  <input
-                    type="password"
-                    className="form-control"
-                  />
-                </div>
+if(loggedIn){
 
-                <button
-                  className="btn btn-primary w-100"
-                >
-                  Login
-                </button>
+return(
 
-              </form>
+<div className="hero">
 
-            </div>
-          </div>
+<h1>
+Login Successful 🎉
+</h1>
 
-        </div>
-      </div>
-    </div>
-  );
+<p>
+Welcome back!
+</p>
+
+<p>
+
+Role:
+<strong>
+
+{" "}
+{role}
+
+</strong>
+
+</p>
+
+</div>
+
+);
+
+}
+
+return(
+
+<div className="hero">
+
+<h1>
+Login / Sign Up
+</h1>
+
+<div className="register-card">
+
+<form
+onSubmit={handleSubmit}
+className="register-form"
+>
+
+<input
+type="text"
+placeholder="Full Name"
+required
+/>
+
+<input
+type="email"
+placeholder="Email"
+required
+/>
+
+<select
+required
+value={role}
+onChange={(e)=>
+setRole(e.target.value)
+}
+>
+
+<option value="">
+Choose Role
+</option>
+
+<option value="Admin">
+Admin
+</option>
+
+<option value="Attendee">
+Attendee
+</option>
+
+<option value="Organizer">
+Organizer
+</option>
+
+</select>
+
+<button
+type="submit"
+className="explore-btn"
+>
+
+Login
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+);
+
 }
 
 export default Login;
