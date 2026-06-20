@@ -1,8 +1,15 @@
+import "../styles/Home.css";
+
 function Home() {
   return (
-    <div>
-      <h2>Welcome to Event Portal</h2>
-      <p>Register and manage events easily.</p>
+    <div className="hero">
+      <h1>Event Registration & Management Portal</h1>
+
+      <p>
+        Discover exciting events and register online.
+      </p>
+
+      <button>Explore Events</button>
     </div>
   );
 }
