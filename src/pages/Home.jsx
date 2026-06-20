@@ -1,17 +1,30 @@
-import "../styles/Home.css";
+function Home(){
 
-function Home() {
-  return (
-    <div className="hero">
-      <h1>Event Registration & Management Portal</h1>
+return(
 
-      <p>
-        Discover exciting events and register online.
-      </p>
+<div className="hero">
 
-      <button>Explore Events</button>
-    </div>
-  );
+<img
+src="https://images.unsplash.com/photo-1511578314322-379afb476865"
+/>
+
+<h1>
+Event Registration &
+Management Portal
+</h1>
+
+<p>
+Discover, join and enjoy events.
+</p>
+
+<button>
+Explore Events
+</button>
+
+</div>
+
+);
+
 }
 
 export default Home;
