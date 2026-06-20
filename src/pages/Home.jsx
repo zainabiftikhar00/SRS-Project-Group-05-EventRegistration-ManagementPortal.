@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-function Home(){
+function Home() {
 
-return(
+return (
 
 <div className="hero">
 
@@ -17,15 +17,17 @@ Discover exciting events and register online.
 
 <Link to="/events">
 
-<button>
+<button className="explore-btn">
+
 Explore Events
+
 </button>
 
 </Link>
 
 <img
 className="hero-image"
-src="https://images.unsplash.com/photo-1511578314322-379afb476865"
+src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30"
 />
 
 </div>
