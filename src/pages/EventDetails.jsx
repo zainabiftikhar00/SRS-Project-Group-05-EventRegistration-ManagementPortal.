@@ -1,18 +1,38 @@
 function EventDetails() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Tech Conference 2026</h1>
+    <div className="container mt-5">
 
-      <p>Venue: Islamabad</p>
+      <div className="card shadow">
 
-      <p>Date: 25 June 2026</p>
+        <div className="card-body">
 
-      <p>
-        A conference covering emerging technologies,
-        software engineering and AI.
-      </p>
+          <h1>Tech Conference 2026</h1>
 
-      <button>Register Now</button>
+          <p>
+            <strong>Venue:</strong> Islamabad
+          </p>
+
+          <p>
+            <strong>Date:</strong> 25 June 2026
+          </p>
+
+          <p>
+            <strong>Category:</strong> Technology
+          </p>
+
+          <p>
+            Join experts and students for a day of
+            innovation and learning.
+          </p>
+
+          <button className="btn btn-success">
+            Register Now
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }
