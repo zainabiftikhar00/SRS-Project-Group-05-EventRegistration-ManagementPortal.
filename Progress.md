@@ -42,3 +42,7 @@
 //ER & EER DIAGRAM
 [ER EER DIAGRAMS..pdf](https://github.com/user-attachments/files/29159775/ER.EER.DIAGRAMS.pdf)
 //20-06-2026 (3:49PM) R032/RO38
+
+//SQL Commands.
+[SQL Commands..pdf](https://github.com/user-attachments/files/29166077/SQL.Commands.pdf)
+//21-06-2026 (12:05AM) R032/R038
