@@ -1,16 +1,8 @@
-# React + Vite
+# SRS-Project-Group-05-EventRegistration-ManagementPortal.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SE project. Event Registration &amp; Management Portal
 
-Currently, two official plugins are available:
+Group Members: Zainab Iftikhar (BSAI51S25R038) , Aena Faakhir (BSAI51S25R012), Emaan Naeem (BSAI51S25R032)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Objectives: The main goal would be to optimize the event registration process and manage/organize events effectively, allowing both the organizers and attendees to enjoy themselves without any stress.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

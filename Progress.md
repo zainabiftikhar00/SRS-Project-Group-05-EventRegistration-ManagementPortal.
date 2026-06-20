@@ -1,0 +1,48 @@
+[Project Processing.pdf](https://github.com/user-attachments/files/23340849/Project.Processing.pdf)
+//PROJECT PROCESSING DOC MADE BY R012
+
+[SRS DOCUMENT.pdf](https://github.com/user-attachments/files/23343663/SRS.DOCUMENT.pdf)
+//SRS DOC MADE BY R038
+
+
+[UCD and DFD Diagram.pdf](https://github.com/user-attachments/files/23343666/UCD.and.DFD.Diagram.pdf)
+//diagrams MADE BY R038
+
+
+[NEW SRS.pdf](https://github.com/user-attachments/files/23838448/NEW.SRS.pdf)
+//New SRS doc made by R012 (version 02, 30-11-2025)
+
+[Design Document New .pdf](https://github.com/user-attachments/files/23981256/Design.Document.New.pdf)
+//New Design Doc made by R032,R038 (Version 02, 6-12-2025)
+
+
+//Added Code version 01 on 08 December,2025. (5:41 pm), by R038
+
+[Event Registration and management portal Code.pdf](https://github.com/user-attachments/files/24359550/Event.Registration.and.management.portal.Code.pdf)
+//Added Code Version 02 on 28 December 2025. (4:37 pm), by R038
+
+[Event Registration and management portal Functionality.pdf](https://github.com/user-attachments/files/24359540/Event.Registration.and.management.portal.Functionality.pdf)
+//Code Functionality Document made by R038 (28-12-2025)
+
+[Test Plan EMP.pdf](https://github.com/user-attachments/files/24501405/Test.Plan.EMP.pdf)
+//TEST PLAN DOCUMENT MADE BY R012,R032, Compiled by R038. (08-06-2026) 
+
+//DataBase Assignment Task 
+[DataBase Assignement.pdf](https://github.com/user-attachments/files/27100190/DataBase.Assignement.pdf) 
+//Made on 30th March 2026, ER Diagram by R032, Rest work by R038. (uploading on 26-04-2026, 6:38pm)
+
+//Normalization 
+[Normalization 3.0..pdf](https://github.com/user-attachments/files/29150318/Normalization.3.0.pdf)
+//20-06-2026 (1:29AM ) R038
+
+//SQL create insert commands
+[SQL create_insert command..pdf](https://github.com/user-attachments/files/29150498/SQL.create_insert.command.pdf)
+//20-06-2026 (1:39AM ) R038
+
+//ER & EER DIAGRAM
+[ER EER DIAGRAMS..pdf](https://github.com/user-attachments/files/29159775/ER.EER.DIAGRAMS.pdf)
+//20-06-2026 (3:49PM) R032/RO38
+
+//SQL Commands.
+[SQL Commands..pdf](https://github.com/user-attachments/files/29166077/SQL.Commands.pdf)
+//21-06-2026 (12:05AM) R032/R038
