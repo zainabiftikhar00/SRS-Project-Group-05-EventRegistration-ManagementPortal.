@@ -71,22 +71,6 @@ Event Registration
 
 <div className="register-card">
 
-<h3>
-
-🎟 Ticket Price
-
-</h3>
-
-<p
-style={{
-fontSize:"28px",
-marginBottom:"20px"
-}}
->
-
-PKR 1500
-
-</p>
 
 <form
 onSubmit={handleSubmit}
