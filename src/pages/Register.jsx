@@ -103,11 +103,11 @@ Choose Role
 </option>
 
 <option value="Admin">
-Participant
+Admin
 </option>
 
 <option value="Attendee">
-Volunteer
+Attendee
 </option>
 
 <option value="Organizer">
