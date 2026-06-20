@@ -1,81 +1,83 @@
+import { useState } from "react";
+
 function Register() {
-  return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
 
-          <div className="card shadow">
-            <div className="card-body">
+const [registered, setRegistered] =
+useState(false);
 
-              <h2 className="text-center mb-4">
-                Register
-              </h2>
+function handleSubmit(e){
 
-              <form>
+e.preventDefault();
 
-                <div className="mb-3">
-                  <label className="form-label">
-                    Full Name
-                  </label>
+setRegistered(true);
 
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter your name"
-                  />
-                </div>
+}
 
-                <div className="mb-3">
-                  <label className="form-label">
-                    Email
-                  </label>
+if(registered){
 
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Enter your email"
-                  />
-                </div>
+return(
 
-                <div className="mb-3">
-                  <label className="form-label">
-                    Password
-                  </label>
+<div className="hero">
 
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Enter password"
-                  />
-                </div>
+<h1>
+Registration Successful 🎉
+</h1>
 
-                <div className="mb-3">
-                  <label className="form-label">
-                    Role
-                  </label>
+<p>
+You are registered for the event.
+</p>
 
-                  <select className="form-select">
-                    <option>Attendee</option>
-                    <option>Organizer</option>
-                  </select>
-                </div>
+</div>
 
-                <button
-                  type="submit"
-                  className="btn btn-primary w-100"
-                >
-                  Register
-                </button>
+);
 
-              </form>
+}
 
-            </div>
-          </div>
+return(
 
-        </div>
-      </div>
-    </div>
-  );
+<div className="hero">
+
+<h1>
+Register
+</h1>
+
+<form
+onSubmit={handleSubmit}
+style={{
+display:"flex",
+flexDirection:"column",
+gap:"15px",
+width:"350px"
+}}
+>
+
+<input
+type="text"
+placeholder="Your Name"
+required
+/>
+
+<input
+type="email"
+placeholder="Email"
+required
+/>
+
+<button
+type="submit"
+className="explore-btn"
+>
+
+Register
+
+</button>
+
+</form>
+
+</div>
+
+);
+
 }
 
 export default Register;
