@@ -39,3 +39,6 @@
 [SQL create_insert command..pdf](https://github.com/user-attachments/files/29150498/SQL.create_insert.command.pdf)
 //20-06-2026 (1:39AM ) R038
 
+//ER & EER DIAGRAM
+[ER EER DIAGRAMS..pdf](https://github.com/user-attachments/files/29159775/ER.EER.DIAGRAMS.pdf)
+//20-06-2026 (3:49PM) R032/RO38
