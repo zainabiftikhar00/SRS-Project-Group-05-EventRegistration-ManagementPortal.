@@ -23,7 +23,7 @@ return (
 
 <Route
 path="/"
-element={<Home />}
+element={<Login />}
 />
 
 <Route
