@@ -37,6 +37,10 @@ function Navbar() {
               <Link to="/dashboard">Dashboard</Link>
             )}
 
+            {user.role === "attendee" && (
+            <Link to="/my-tickets">My Tickets</Link>
+            )}
+            
             <span style={{ color: "#6b4c3c", fontWeight: "600" }}>
               Hi, {user.name.split(" ")[0]}
             </span>

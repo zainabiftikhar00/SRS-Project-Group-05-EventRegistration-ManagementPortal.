@@ -1,3 +1,4 @@
+import MyTickets from "./pages/MyTickets";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -55,6 +56,11 @@ element={<Login />}
 <Route
 path="/dashboard"
 element={<Dashboard />}
+/>
+
+<Route
+  path="/my-tickets"
+  element={<MyTickets />}
 />
 
 </Routes>

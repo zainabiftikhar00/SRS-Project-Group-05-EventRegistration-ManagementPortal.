@@ -13,6 +13,7 @@ const emptyForm = {
   event_date: "",
   event_time: "",
   capacity: "",
+  price: "",
   status: "upcoming",
 };
 
@@ -319,6 +320,15 @@ function Dashboard() {
               onChange={handleChange}
             />
 
+            <input
+            type="number"
+            name="price"
+            placeholder="Ticket Price (PKR)"
+            min={0}
+            value={form.price}
+            onChange={handleChange}
+            />
+
             <select name="status" value={form.status} onChange={handleChange}>
               <option value="upcoming">Upcoming</option>
               <option value="ongoing">Ongoing</option>
@@ -383,6 +393,7 @@ function Dashboard() {
                   📍 {event.venue || "TBA"} &nbsp;|&nbsp;
                   🏷 {event.category || "General"} &nbsp;|&nbsp;
                   🎟 {event.capacity} seats &nbsp;|&nbsp;
+                  💰 PKR {event.price || "Free"} &nbsp;|&nbsp;
                   <span style={{ textTransform: "capitalize" }}>Status: {event.status}</span>
                 </p>
               </div>
