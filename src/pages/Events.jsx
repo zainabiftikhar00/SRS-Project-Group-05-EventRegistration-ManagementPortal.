@@ -1,111 +1,123 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+// ─── IMPORTANT: Change this URL when you deploy your backend ───
+const BACKEND_URL = "http://localhost:5000";
+
 function Events() {
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-const events = [
-{
-id: 1,
-title: "Tech Conference 2026",
-venue: "Islamabad",
-date: "25 June 2026",
-category: "Technology",
-seats: 120
-},
-{
-id: 2,
-title: "AI Workshop",
-venue: "Rawalpindi",
-date: "30 June 2026",
-category: "Artificial Intelligence",
-seats: 80
-},
-{
-id: 3,
-title: "Sports Gala",
-venue: "NUST",
-date: "10 July 2026",
-category: "Sports",
-seats: 300
-}
-];
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/events`)
+      .then((res) => res.json())
+      .then((data) => {
+        setEvents(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+        setLoading(false);
+      });
+  }, []);
 
-return (
+  if (loading) {
+    return (
+      <div className="container" style={{ textAlign: "center", paddingTop: "80px" }}>
+        <h2>Loading events...</h2>
+      </div>
+    );
+  }
 
-<div className="container">
+  if (events.length === 0) {
+    return (
+      <div className="container" style={{ textAlign: "center", paddingTop: "80px" }}>
+        <h2>No events found.</h2>
+        <p>Check back later or add events from the Dashboard.</p>
+      </div>
+    );
+  }
 
-<h1
-style={{
-marginBottom:"40px",
-textAlign:"center",
-fontSize:"52px"
-}}
->
-Upcoming Events
-</h1>
+  return (
+    <div className="container">
+      <h1
+        style={{
+          textAlign: "center",
+          fontSize: "54px",
+          marginBottom: "50px",
+          color: "#6b4c3c",
+          fontWeight: "800",
+        }}
+      >
+        Upcoming Events
+      </h1>
 
-<div className="row">
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))",
+          gap: "30px",
+        }}
+      >
+        {events.map((event) => (
+          <div key={event.id}>
+            <div
+              className="card"
+              style={{
+                background: "#fffdfa",
+                padding: "32px",
+                borderRadius: "24px",
+                boxShadow: "0 10px 30px rgba(0,0,0,.06)",
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "320px",
+              }}
+            >
+              <h3 style={{ fontSize: "28px", marginBottom: "20px", color: "#6b4c3c" }}>
+                {event.title}
+              </h3>
 
-{events.map((event)=>(
+              <p style={{ marginBottom: "12px" }}>
+                📍 Venue: {event.venue || "Coming Soon"}
+              </p>
 
-<div
-key={event.id}
->
+              <p style={{ marginBottom: "12px" }}>
+                📅 Date: {event.event_date ? new Date(event.event_date).toLocaleDateString() : "TBA"}
+              </p>
 
-<div className="card">
+              <p style={{ marginBottom: "12px" }}>
+                🏷 Category: {event.category || "General"}
+              </p>
 
-<h3>{event.title}</h3>
+              <p style={{ marginBottom: "30px" }}>
+                🎟 Seats: {event.capacity || "Open"}
+              </p>
 
-<p>
-<strong>📍 Venue:</strong>
-{" "}
-{event.venue}
-</p>
-
-<p>
-<strong>📅 Date:</strong>
-{" "}
-{event.date}
-</p>
-
-<p>
-<strong>🏷 Category:</strong>
-{" "}
-{event.category}
-</p>
-
-<p>
-<strong>🎟 Seats:</strong>
-{" "}
-{event.seats}
-</p>
-
-<Link
-to={`/events/${event.id}`}
-style={{
-textDecoration:"none"
-}}
->
-
-<button>
-
-View Details
-
-</button>
-
-</Link>
-
-</div>
-
-</div>
-
-))}
-
-</div>
-
-</div>
-
-);
-
+              <Link
+                to={`/events/${event.id}`}
+                style={{ marginTop: "auto", textDecoration: "none" }}
+              >
+                <button
+                  style={{
+                    width: "100%",
+                    background: "linear-gradient(90deg,#c89f94,#ddb7a8)",
+                    border: "none",
+                    padding: "16px",
+                    color: "white",
+                    borderRadius: "16px",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                  }}
+                >
+                  View Details
+                </button>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Events;

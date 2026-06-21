@@ -1,96 +1,100 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+// ─── IMPORTANT: Change this URL when you deploy your backend ───
+const BACKEND_URL = "http://localhost:5000";
 
 function EventDetails() {
+  const navigate = useNavigate();
+  const { id } = useParams();
 
-const navigate = useNavigate();
+  const [event, setEvent] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-const { id } = useParams();
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/events/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setEvent(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+        setLoading(false);
+      });
+  }, [id]);
 
-const events = [
+  if (loading) {
+    return (
+      <div className="hero">
+        <h2>Loading event...</h2>
+      </div>
+    );
+  }
 
-{
-id:1,
-title:"Tech Conference 2026",
-venue:"Islamabad",
-date:"25 June 2026",
-price:"PKR 1500",
-description:"Join industry leaders and explore future technology."
-},
+  if (!event || event.message === "Event not found.") {
+    return (
+      <div className="hero">
+        <h1>Event Not Found</h1>
+        <button className="explore-btn" onClick={() => navigate("/events")}>
+          Back to Events
+        </button>
+      </div>
+    );
+  }
 
-{
-id:2,
-title:"AI Workshop",
-venue:"Rawalpindi",
-date:"30 June 2026",
-price:"PKR 2000",
-description:"Hands-on AI learning and activities."
-},
+  return (
+    <div className="hero">
+      <h1>{event.title}</h1>
 
-{
-id:3,
-title:"Sports Gala",
-venue:"NUST",
-date:"10 July 2026",
-price:"PKR 1000",
-description:"Sports competitions and entertainment."
-}
+      <p>📍 {event.venue || "Venue TBA"}</p>
 
-];
+      <p>
+        📅 {event.event_date ? new Date(event.event_date).toLocaleDateString() : "Date TBA"}
+      </p>
 
-const event =
-events.find(
-e => e.id === Number(id)
-);
+      <p>🏷 Category: {event.category || "General"}</p>
 
-if(!event){
+      <p>🎟 Total Seats: <strong>{event.capacity}</strong></p>
 
-return <h1>Event Not Found</h1>;
+      <p style={{ maxWidth: "600px", margin: "16px auto" }}>
+        {event.description}
+      </p>
 
-}
+      <p>
+        Status:{" "}
+        <strong style={{ textTransform: "capitalize" }}>{event.status}</strong>
+      </p>
 
-return(
+      <button
+        className="explore-btn"
+        style={{ marginTop: "20px" }}
+        onClick={() => navigate("/register")}
+      >
+        Register Now
+      </button>
 
-<div className="hero">
-
-<h1>
-{event.title}
-</h1>
-
-<p>
-📍 {event.venue}
-</p>
-
-<p>
-📅 {event.date}
-</p>
-
-<p>
-🎟 Ticket Price:
-<strong>
-{" "}
-{event.price}
-</strong>
-</p>
-
-<p>
-{event.description}
-</p>
-
-<button
-className="explore-btn"
-onClick={()=>
-navigate("/register")
-}
->
-
-Register Now
-
-</button>
-
-</div>
-
-);
-
+      <button
+        onClick={() => navigate("/events")}
+        style={{
+          marginTop: "12px",
+          background: "none",
+          border: "2px solid #6b4c3c",
+          color: "#6b4c3c",
+          padding: "12px 32px",
+          borderRadius: "12px",
+          cursor: "pointer",
+          fontWeight: "600",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        ← Back to Events
+      </button>
+    </div>
+  );
 }
 
 export default EventDetails;
+

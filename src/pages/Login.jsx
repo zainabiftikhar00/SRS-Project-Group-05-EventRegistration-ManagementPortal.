@@ -1,123 +1,93 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// ─── IMPORTANT: Change this URL when you deploy your backend ───
+const BACKEND_URL = "http://localhost:5000";
 
 function Login() {
+  const navigate = useNavigate();
 
-const [loggedIn, setLoggedIn] =
-useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-const [role, setRole] =
-useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-function handleSubmit(e){
+    try {
+      const response = await fetch(`${BACKEND_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-e.preventDefault();
+      const data = await response.json();
 
-setLoggedIn(true);
+      if (!response.ok) {
+        alert(data.message || "Login Failed");
+        setLoading(false);
+        return;
+      }
 
-}
+      // Save user info so other pages can use it
+      localStorage.setItem("user", JSON.stringify(data.user));
 
-if(loggedIn){
+      alert(`Welcome back, ${data.user.name}! Role: ${data.user.role}`);
 
-return(
+      // Send admin/organizer to dashboard, attendees to events page
+      if (data.user.role === "admin" || data.user.role === "organizer") {
+        navigate("/dashboard");
+      } else {
+        navigate("/events");
+      }
 
-<div className="hero">
+    } catch (error) {
+      console.log(error);
+      alert("Cannot connect to server. Is your backend running?");
+    }
 
-<h1>
-Login Successful 🎉
-</h1>
+    setLoading(false);
+  };
 
-<p>
-Welcome back!
-</p>
+  return (
+    <div className="hero">
+      <h1>Login</h1>
 
-<p>
+      <div className="register-card">
+        <form onSubmit={handleSubmit} className="register-form">
 
-Role:
-<strong>
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-{" "}
-{role}
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-</strong>
+          <button type="submit" className="explore-btn" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
 
-</p>
+        </form>
 
-</div>
-
-);
-
-}
-
-return(
-
-<div className="hero">
-
-<h1>
-Login / Sign Up
-</h1>
-
-<div className="register-card">
-
-<form
-onSubmit={handleSubmit}
-className="register-form"
->
-
-<input
-type="text"
-placeholder="Full Name"
-required
-/>
-
-<input
-type="email"
-placeholder="Email"
-required
-/>
-
-<select
-required
-value={role}
-onChange={(e)=>
-setRole(e.target.value)
-}
->
-
-<option value="">
-Choose Role
-</option>
-
-<option value="Admin">
-Admin
-</option>
-
-<option value="Attendee">
-Attendee
-</option>
-
-<option value="Organizer">
-Organizer
-</option>
-
-</select>
-
-<button
-type="submit"
-className="explore-btn"
->
-
-Login
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-);
-
+        <p style={{ marginTop: "16px", textAlign: "center" }}>
+          Don't have an account?{" "}
+          <a href="/register" style={{ color: "#6b4c3c", fontWeight: "600" }}>
+            Register here
+          </a>
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
