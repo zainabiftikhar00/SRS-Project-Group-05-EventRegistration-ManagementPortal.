@@ -1,4 +1,4 @@
-import MyTickets from "./pages/MyTickets";
+import MyTickets from "./pages/MyTicket";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";

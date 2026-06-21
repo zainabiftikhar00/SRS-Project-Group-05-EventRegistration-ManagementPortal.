@@ -80,21 +80,22 @@ function Dashboard() {
   };
 
   // ── Open pre-filled form to EDIT an event ──
-  const openEditForm = (event) => {
-    setForm({
-      title: event.title || "",
-      description: event.description || "",
-      category: event.category || "",
-      venue: event.venue || "",
-      // Convert date to YYYY-MM-DD format for the date input
-      event_date: event.event_date ? event.event_date.slice(0, 10) : "",
-      event_time: event.event_time || "",
-      capacity: event.capacity || "",
-      status: event.status || "upcoming",
-    });
-    setEditingId(event.id);
-    setShowForm(true);
-  };
+const openEditForm = (event) => {
+  setForm({
+    title: event.title || "",
+    description: event.description || "",
+    category: event.category || "",
+    venue: event.venue || "",
+    event_date: event.event_date ? event.event_date.slice(0, 10) : "",
+    event_time: event.event_time || "",
+    capacity: event.capacity || "",
+    price: event.price ?? "",
+    status: event.status || "upcoming",
+  });
+
+  setEditingId(event.id);
+  setShowForm(true);
+};
 
   // ── SAVE: handles both Add and Edit ──
   const handleSave = async (e) => {
@@ -393,7 +394,7 @@ function Dashboard() {
                   📍 {event.venue || "TBA"} &nbsp;|&nbsp;
                   🏷 {event.category || "General"} &nbsp;|&nbsp;
                   🎟 {event.capacity} seats &nbsp;|&nbsp;
-                  💰 PKR {event.price || "Free"} &nbsp;|&nbsp;
+                  💰 {event.price > 0 ? `PKR ${event.price}` : "Free"} &nbsp;|&nbsp;
                   <span style={{ textTransform: "capitalize" }}>Status: {event.status}</span>
                 </p>
               </div>
